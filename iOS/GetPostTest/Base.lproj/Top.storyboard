@@ -90,7 +90,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="detailLabel" destination="Tv2-Lh-w8q" id="9Bf-lC-GdW"/>
+                                            <outlet property="descriptionLabel" destination="Tv2-Lh-w8q" id="LIR-1D-FgE"/>
                                             <outlet property="nameLabel" destination="2SK-jt-NQK" id="hUn-Xn-581"/>
                                         </connections>
                                     </tableViewCell>

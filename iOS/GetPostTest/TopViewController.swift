@@ -58,7 +58,7 @@ extension TopViewController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TopCell", for: indexPath) as! TopTableViewCell
         cell.nameLabel.text = users.userList[indexPath.row].name.description
-        cell.detailLabel.text = users.userList[indexPath.row].description.description
+        cell.descriptionLabel.text = users.userList[indexPath.row].description.description
         return cell
     }
 }
