@@ -16,9 +16,7 @@
 		C05791961F780352008A801B /* GetPostTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05791951F780352008A801B /* GetPostTestTests.swift */; };
 		C05791A11F780352008A801B /* GetPostTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05791A01F780352008A801B /* GetPostTestUITests.swift */; };
 		C0E8ACB91F781B6F009670DF /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E8ACB81F781B6F009670DF /* Add.storyboard */; };
-		C0E8ACBB1F781BA5009670DF /* Delete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E8ACBA1F781BA5009670DF /* Delete.storyboard */; };
 		C0E8ACBD1F781BD6009670DF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8ACBC1F781BD6009670DF /* AddViewController.swift */; };
-		C0E8ACBF1F781BEA009670DF /* DeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8ACBE1F781BEA009670DF /* DeleteViewController.swift */; };
 		C0E8ACC11F781E9E009670DF /* TopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8ACC01F781E9E009670DF /* TopTableViewCell.swift */; };
 		C0E8ACC81F782CAC009670DF /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8ACC71F782CAC009670DF /* Users.swift */; };
 		CCE0A9196E8692B2B8D8D5DE /* Pods_GetPostTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA464C6E915DEF952AF31D72 /* Pods_GetPostTestTests.framework */; };
@@ -65,9 +63,7 @@
 		C05791A01F780352008A801B /* GetPostTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPostTestUITests.swift; sourceTree = "<group>"; };
 		C05791A21F780352008A801B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0E8ACB81F781B6F009670DF /* Add.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
-		C0E8ACBA1F781BA5009670DF /* Delete.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Delete.storyboard; sourceTree = "<group>"; };
 		C0E8ACBC1F781BD6009670DF /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		C0E8ACBE1F781BEA009670DF /* DeleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteViewController.swift; sourceTree = "<group>"; };
 		C0E8ACC01F781E9E009670DF /* TopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTableViewCell.swift; sourceTree = "<group>"; };
 		C0E8ACC71F782CAC009670DF /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		C432B8BDD6F929D5B43A7630 /* Pods-GetPostTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetPostTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetPostTestTests/Pods-GetPostTestTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,7 +148,6 @@
 				C05791801F780352008A801B /* AppDelegate.swift */,
 				C0E8ACC21F781EAD009670DF /* Top */,
 				C0E8ACC31F781ED7009670DF /* Add */,
-				C0E8ACC41F781F11009670DF /* Delete */,
 				C0E8ACC61F782C81009670DF /* Model */,
 				C05791871F780352008A801B /* Assets.xcassets */,
 				C05791891F780352008A801B /* LaunchScreen.storyboard */,
@@ -196,15 +191,6 @@
 				C0E8ACBC1F781BD6009670DF /* AddViewController.swift */,
 			);
 			name = Add;
-			sourceTree = "<group>";
-		};
-		C0E8ACC41F781F11009670DF /* Delete */ = {
-			isa = PBXGroup;
-			children = (
-				C0E8ACBA1F781BA5009670DF /* Delete.storyboard */,
-				C0E8ACBE1F781BEA009670DF /* DeleteViewController.swift */,
-			);
-			name = Delete;
 			sourceTree = "<group>";
 		};
 		C0E8ACC61F782C81009670DF /* Model */ = {
@@ -337,7 +323,6 @@
 				C057918B1F780352008A801B /* LaunchScreen.storyboard in Resources */,
 				C05791881F780352008A801B /* Assets.xcassets in Resources */,
 				C0E8ACB91F781B6F009670DF /* Add.storyboard in Resources */,
-				C0E8ACBB1F781BA5009670DF /* Delete.storyboard in Resources */,
 				C05791861F780352008A801B /* Top.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,7 +505,6 @@
 				C0E8ACC81F782CAC009670DF /* Users.swift in Sources */,
 				C05791811F780352008A801B /* AppDelegate.swift in Sources */,
 				C0E8ACBD1F781BD6009670DF /* AddViewController.swift in Sources */,
-				C0E8ACBF1F781BEA009670DF /* DeleteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
