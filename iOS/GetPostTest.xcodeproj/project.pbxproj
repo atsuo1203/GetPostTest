@@ -19,6 +19,7 @@
 		C0E8ACBB1F781BA5009670DF /* Delete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E8ACBA1F781BA5009670DF /* Delete.storyboard */; };
 		C0E8ACBD1F781BD6009670DF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8ACBC1F781BD6009670DF /* AddViewController.swift */; };
 		C0E8ACBF1F781BEA009670DF /* DeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8ACBE1F781BEA009670DF /* DeleteViewController.swift */; };
+		C0E8ACC11F781E9E009670DF /* TopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8ACC01F781E9E009670DF /* TopTableViewCell.swift */; };
 		CCE0A9196E8692B2B8D8D5DE /* Pods_GetPostTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA464C6E915DEF952AF31D72 /* Pods_GetPostTestTests.framework */; };
 		D50341B6664C827AB39B2004 /* Pods_GetPostTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD992D5815322C7E237DA6C /* Pods_GetPostTestUITests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		C0E8ACBA1F781BA5009670DF /* Delete.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Delete.storyboard; sourceTree = "<group>"; };
 		C0E8ACBC1F781BD6009670DF /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		C0E8ACBE1F781BEA009670DF /* DeleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteViewController.swift; sourceTree = "<group>"; };
+		C0E8ACC01F781E9E009670DF /* TopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTableViewCell.swift; sourceTree = "<group>"; };
 		C432B8BDD6F929D5B43A7630 /* Pods-GetPostTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetPostTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetPostTestTests/Pods-GetPostTestTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,12 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				C05791801F780352008A801B /* AppDelegate.swift */,
-				C05791821F780352008A801B /* TopViewController.swift */,
-				C0E8ACBC1F781BD6009670DF /* AddViewController.swift */,
-				C0E8ACBE1F781BEA009670DF /* DeleteViewController.swift */,
-				C05791841F780352008A801B /* Top.storyboard */,
-				C0E8ACB81F781B6F009670DF /* Add.storyboard */,
-				C0E8ACBA1F781BA5009670DF /* Delete.storyboard */,
+				C0E8ACC21F781EAD009670DF /* Top */,
+				C0E8ACC31F781ED7009670DF /* Add */,
+				C0E8ACC41F781F11009670DF /* Delete */,
 				C05791871F780352008A801B /* Assets.xcassets */,
 				C05791891F780352008A801B /* LaunchScreen.storyboard */,
 				C057918C1F780352008A801B /* Info.plist */,
@@ -175,6 +174,34 @@
 				C05791A21F780352008A801B /* Info.plist */,
 			);
 			path = GetPostTestUITests;
+			sourceTree = "<group>";
+		};
+		C0E8ACC21F781EAD009670DF /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				C05791841F780352008A801B /* Top.storyboard */,
+				C05791821F780352008A801B /* TopViewController.swift */,
+				C0E8ACC01F781E9E009670DF /* TopTableViewCell.swift */,
+			);
+			name = Top;
+			sourceTree = "<group>";
+		};
+		C0E8ACC31F781ED7009670DF /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				C0E8ACB81F781B6F009670DF /* Add.storyboard */,
+				C0E8ACBC1F781BD6009670DF /* AddViewController.swift */,
+			);
+			name = Add;
+			sourceTree = "<group>";
+		};
+		C0E8ACC41F781F11009670DF /* Delete */ = {
+			isa = PBXGroup;
+			children = (
+				C0E8ACBA1F781BA5009670DF /* Delete.storyboard */,
+				C0E8ACBE1F781BEA009670DF /* DeleteViewController.swift */,
+			);
+			name = Delete;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C05791831F780352008A801B /* TopViewController.swift in Sources */,
+				C0E8ACC11F781E9E009670DF /* TopTableViewCell.swift in Sources */,
 				C05791811F780352008A801B /* AppDelegate.swift in Sources */,
 				C0E8ACBD1F781BD6009670DF /* AddViewController.swift in Sources */,
 				C0E8ACBF1F781BEA009670DF /* DeleteViewController.swift in Sources */,
