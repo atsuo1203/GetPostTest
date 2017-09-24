@@ -8,11 +8,14 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func addButtonTapped(_ sender: UIButton) {
     }
     @IBOutlet weak var topTableView: UITableView!
+    
+    var users = Users()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,20 +35,30 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func getRequest(){
         Alamofire.request("http://127.0.0.1:5000/").responseJSON { (response) in
-            print(response)
+            guard let object = response.result.value else {
+                return
+            }
+            let json = JSON(object)
+            json.forEach { (_, json) in
+                let user = User()
+                user.name = json["name"].description
+                user.description = json["description"].description
+                self.users.userList.append(user)
+            }
+            self.topTableView.reloadData()
         }
     }
 }
 
 extension TopViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return users.userList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TopCell", for: indexPath) as! TopTableViewCell
-        cell.nameLabel.text = "takashi"
-        cell.detailLabel.text = "大学生"
+        cell.nameLabel.text = users.userList[indexPath.row].name.description
+        cell.detailLabel.text = users.userList[indexPath.row].description.description
         return cell
     }
 }
