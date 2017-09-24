@@ -10,8 +10,8 @@ def show_entries():
 
     for entry in entries:
         result = {
-            "title": entry.title,
-            "text": entry.text
+            "name": entry.name,
+            "description": entry.description
         }
         results.append(result)
 
@@ -22,8 +22,8 @@ def show_entries():
 def add_entry():
     entry_id = Entry.query.count() + 1
     entry = Entry(
-        title=str(entry_id),
-        text='text'
+        name=str(entry_id),
+        description='description'
     )
     db.session.add(entry)
     db.session.commit()

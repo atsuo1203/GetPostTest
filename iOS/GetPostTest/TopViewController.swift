@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func addButtonTapped(_ sender: UIButton) {
@@ -21,11 +22,18 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         topTableView.dataSource = self
         topTableView.estimatedRowHeight = 80
         topTableView.rowHeight = UITableViewAutomaticDimension
+        getRequest()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func getRequest(){
+        Alamofire.request("http://127.0.0.1:5000/").responseJSON { (response) in
+            print(response)
+        }
     }
 }
 
