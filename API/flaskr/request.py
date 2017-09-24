@@ -20,6 +20,7 @@ def show_users():
     results = []
     for user in users:
         result = {
+            "id": user.id,
             "name": user.name,
             "description": user.description
         }
@@ -28,15 +29,15 @@ def show_users():
 
 
 @app.route('/<int:user_id>', methods=['GET', 'PUT', 'DELETE'])
-def add_user():
-    user_id = User.query.count() + 1
-    user = User(
-        name=str(user_id),
-        description='description'
-    )
-    db.session.add(user)
-    db.session.commit()
-    return redirect(url_for('show_users'))
+def show_user(user_id):
+    # if request == get
+    user = User.query.filter_by(id=user_id).first()
+    result = {
+        "id": user.id,
+        "name": user.name,
+        "description": user.description
+    }
+    return make_response(jsonify(result))
 
 
 @app.route('/add_sample')
