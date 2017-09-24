@@ -19,25 +19,29 @@ def show_users():
     users = User.query.all()
     results = []
     for user in users:
-        result = {
-            "id": user.id,
-            "name": user.name,
-            "description": user.description
-        }
-        results.append(result)
+        results.append(result_json(user))
     return make_response(jsonify(results))
 
 
 @app.route('/<int:user_id>', methods=['GET', 'PUT', 'DELETE'])
 def show_user(user_id):
-    # if request == get
     user = User.query.filter_by(id=user_id).first()
-    result = {
-        "id": user.id,
-        "name": user.name,
-        "description": user.description
-    }
-    return make_response(jsonify(result))
+    if user is None:
+        return make_response(jsonify([]))
+
+    if request.method == 'PUT':
+        user.name = request.data.get('name', '')
+        user.description = request.data.get('description', '')
+        db.session.flush()
+        return make_response(jsonify(result_json(user)))
+
+    if request.method == 'DELETE':
+        db.session.delete(user)
+        db.session.commit()
+        return make_response(jsonify([]))
+
+    # if request == get
+    return make_response(jsonify(result_json(user)))
 
 
 @app.route('/add_sample')
@@ -61,3 +65,11 @@ def delete_all_user():
 
     return redirect(url_for('show_users'))
 
+
+def result_json(user):
+    result = {
+        "id": user.id,
+        "name": user.name,
+        "description": user.description
+    }
+    return result
