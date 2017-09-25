@@ -39,6 +39,11 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.topTableView.reloadData()
+    }
+    
     func getRequest(){
         self.users.userList.removeAll()
         self.topTableView.reloadData()
@@ -56,6 +61,7 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             self.topTableView.reloadData()
         }
     }
+    
 }
 
 extension TopViewController {
@@ -75,7 +81,9 @@ extension TopViewController {
         // 編集
         let edit = UITableViewRowAction(style: .normal, title: "Edit") {
             (action, indexPath) in
-            print("edit")
+            let storyboard = UIStoryboard(name: "Edit", bundle: nil)
+            let next = storyboard.instantiateInitialViewController() as! EditViewController
+            self.present(next, animated: true, completion: nil)
         }
         
         edit.backgroundColor = UIColor.green

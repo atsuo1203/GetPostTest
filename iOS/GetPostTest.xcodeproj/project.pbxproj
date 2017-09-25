@@ -19,6 +19,8 @@
 		C0E8ACBD1F781BD6009670DF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8ACBC1F781BD6009670DF /* AddViewController.swift */; };
 		C0E8ACC11F781E9E009670DF /* TopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8ACC01F781E9E009670DF /* TopTableViewCell.swift */; };
 		C0E8ACC81F782CAC009670DF /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8ACC71F782CAC009670DF /* Users.swift */; };
+		C0E8ACCB1F796D2C009670DF /* Edit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E8ACCA1F796D2C009670DF /* Edit.storyboard */; };
+		C0E8ACCD1F796D63009670DF /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8ACCC1F796D63009670DF /* EditViewController.swift */; };
 		CCE0A9196E8692B2B8D8D5DE /* Pods_GetPostTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA464C6E915DEF952AF31D72 /* Pods_GetPostTestTests.framework */; };
 		D50341B6664C827AB39B2004 /* Pods_GetPostTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD992D5815322C7E237DA6C /* Pods_GetPostTestUITests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,8 @@
 		C0E8ACBC1F781BD6009670DF /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		C0E8ACC01F781E9E009670DF /* TopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTableViewCell.swift; sourceTree = "<group>"; };
 		C0E8ACC71F782CAC009670DF /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		C0E8ACCA1F796D2C009670DF /* Edit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Edit.storyboard; sourceTree = "<group>"; };
+		C0E8ACCC1F796D63009670DF /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		C432B8BDD6F929D5B43A7630 /* Pods-GetPostTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetPostTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetPostTestTests/Pods-GetPostTestTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +153,7 @@
 				C0E8ACC21F781EAD009670DF /* Top */,
 				C0E8ACC31F781ED7009670DF /* Add */,
 				C0E8ACC61F782C81009670DF /* Model */,
+				C0E8ACC91F796D0B009670DF /* Edit */,
 				C05791871F780352008A801B /* Assets.xcassets */,
 				C05791891F780352008A801B /* LaunchScreen.storyboard */,
 				C057918C1F780352008A801B /* Info.plist */,
@@ -199,6 +204,15 @@
 				C0E8ACC71F782CAC009670DF /* Users.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		C0E8ACC91F796D0B009670DF /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				C0E8ACCA1F796D2C009670DF /* Edit.storyboard */,
+				C0E8ACCC1F796D63009670DF /* EditViewController.swift */,
+			);
+			name = Edit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C057918B1F780352008A801B /* LaunchScreen.storyboard in Resources */,
+				C0E8ACCB1F796D2C009670DF /* Edit.storyboard in Resources */,
 				C05791881F780352008A801B /* Assets.xcassets in Resources */,
 				C0E8ACB91F781B6F009670DF /* Add.storyboard in Resources */,
 				C05791861F780352008A801B /* Top.storyboard in Resources */,
@@ -502,6 +517,7 @@
 			files = (
 				C05791831F780352008A801B /* TopViewController.swift in Sources */,
 				C0E8ACC11F781E9E009670DF /* TopTableViewCell.swift in Sources */,
+				C0E8ACCD1F796D63009670DF /* EditViewController.swift in Sources */,
 				C0E8ACC81F782CAC009670DF /* Users.swift in Sources */,
 				C05791811F780352008A801B /* AppDelegate.swift in Sources */,
 				C0E8ACBD1F781BD6009670DF /* AddViewController.swift in Sources */,

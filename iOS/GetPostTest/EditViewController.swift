@@ -1,0 +1,55 @@
+//
+//  EditViewController.swift
+//  GetPostTest
+//
+//  Created by Atsuo Yonehara on 2017/09/26.
+//  Copyright © 2017年 Atsuo Yonehara. All rights reserved.
+//
+
+import UIKit
+import Alamofire
+import SwiftyJSON
+
+class EditViewController: UIViewController {
+    @IBAction func backButtonTaped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func sendButtonTaped(_ sender: UIButton) {
+    }
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
+
+    @IBOutlet weak var descriptionTextView: UITextView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func putRequest(userID: String, name: String, des: String){
+        let parameters: Parameters = [
+            "name": name,
+            "description": des
+        ]
+        Alamofire.request("http://127.0.0.1:5000/" + userID, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            print(response)
+        }
+    }
+
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
