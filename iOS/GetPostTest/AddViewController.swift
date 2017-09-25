@@ -9,7 +9,20 @@
 import UIKit
 
 class AddViewController: UIViewController {
+    @IBAction func backButtonTaped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func sendButtonTaped(_ sender: UIButton) {
+        guard let name = nameTextField.text?.description else {
+            return
+        }
+        let description = descriptionTextView.text.description
+        print(name)
+        print(description)
+    }
+    @IBOutlet weak var nameTextField: UITextField!
 
+    @IBOutlet weak var descriptionTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

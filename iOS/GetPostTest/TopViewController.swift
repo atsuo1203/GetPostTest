@@ -12,6 +12,9 @@ import SwiftyJSON
 
 class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func addButtonTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Add", bundle: nil)
+        let next = storyboard.instantiateInitialViewController() as! AddViewController
+        self.present(next, animated: true, completion: nil)
     }
     @IBOutlet weak var topTableView: UITableView!
     
