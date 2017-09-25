@@ -16,6 +16,9 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let next = storyboard.instantiateInitialViewController() as! AddViewController
         self.present(next, animated: true, completion: nil)
     }
+    @IBAction func reloadButtonTaped(_ sender: UIButton) {
+        getRequest()
+    }
     @IBOutlet weak var topTableView: UITableView!
     
     var users = Users()
@@ -37,6 +40,8 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func getRequest(){
+        self.users.userList.removeAll()
+        self.topTableView.reloadData()
         Alamofire.request("http://127.0.0.1:5000/").responseJSON { (response) in
             guard let object = response.result.value else {
                 return
