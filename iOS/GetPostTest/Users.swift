@@ -13,6 +13,7 @@ class Users {
 }
 
 class User {
+    var id = ""
     var name = ""
     var description = ""
 }

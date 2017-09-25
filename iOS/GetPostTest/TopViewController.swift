@@ -54,6 +54,7 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             let json = JSON(object)
             json.forEach { (_, json) in
                 let user = User()
+                user.id = json["id"].description
                 user.name = json["name"].description
                 user.description = json["description"].description
                 self.users.userList.append(user)
@@ -83,6 +84,7 @@ extension TopViewController {
             (action, indexPath) in
             let storyboard = UIStoryboard(name: "Edit", bundle: nil)
             let next = storyboard.instantiateInitialViewController() as! EditViewController
+            next.user = self.users.userList[indexPath.row]
             self.present(next, animated: true, completion: nil)
         }
         
