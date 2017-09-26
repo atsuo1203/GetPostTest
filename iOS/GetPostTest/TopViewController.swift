@@ -17,7 +17,7 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.present(next, animated: true, completion: nil)
     }
     @IBAction func reloadButtonTaped(_ sender: UIButton) {
-        getRequest()
+        setData()
     }
     @IBOutlet weak var topTableView: UITableView!
     
@@ -40,12 +40,16 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setData()
+    }
+    
+    func setData(){
+        self.users.userList.removeAll()
+        self.topTableView.reloadData()
         getRequest()
     }
     
     func getRequest(){
-        self.users.userList.removeAll()
-        self.topTableView.reloadData()
         Alamofire.request("http://127.0.0.1:5000/").responseJSON { (response) in
             guard let object = response.result.value else {
                 return
@@ -59,6 +63,12 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 self.users.userList.append(user)
             }
             self.topTableView.reloadData()
+        }
+    }
+    
+    func deleteRequest(id: String){
+        Alamofire.request("http://127.0.0.1:5000/" + id, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            print(response)
         }
     }
     
@@ -92,6 +102,8 @@ extension TopViewController {
         // 削除
         let del = UITableViewRowAction(style: .default, title: "Delete") {
             (action, indexPath) in
+            let user = self.users.userList[indexPath.row]
+            self.deleteRequest(id: user.id)
             self.users.userList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }

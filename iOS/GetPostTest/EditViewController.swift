@@ -15,7 +15,7 @@ class EditViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func sendButtonTaped(_ sender: UIButton) {
-        putRequest(userID: (idLabel.text?.description)!, name: (nameTextField.text?.description)!, des: descriptionTextView.text)
+        putRequest(userID: (idLabel.text?.description)!, name: (nameTextField.text?.description)!, description: descriptionTextView.text)
         print(idLabel.text!)
         print(nameTextField.text!)
         print(descriptionTextView.text)
@@ -49,10 +49,10 @@ class EditViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func putRequest(userID: String, name: String, des: String){
+    func putRequest(userID: String, name: String, description: String){
         let parameters: Parameters = [
             "name": name,
-            "description": des
+            "description": description
         ]
         Alamofire.request("http://127.0.0.1:5000/" + userID, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             print(response)
