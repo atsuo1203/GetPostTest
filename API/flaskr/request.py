@@ -30,8 +30,9 @@ def show_user(user_id):
         return make_response(jsonify([]))
 
     if request.method == 'PUT':
-        user.name = 'name'
-        print(eval(request.data)['name'])
+        data = eval(request.data)
+        user.name = data['name']
+        user.description = data['description']
         db.session.commit()
         return make_response(jsonify(result_json(user)))
 
