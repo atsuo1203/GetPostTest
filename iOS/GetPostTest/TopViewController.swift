@@ -31,7 +31,6 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         topTableView.dataSource = self
         topTableView.estimatedRowHeight = 80
         topTableView.rowHeight = UITableViewAutomaticDimension
-        getRequest()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +40,7 @@ class TopViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.topTableView.reloadData()
+        getRequest()
     }
     
     func getRequest(){
