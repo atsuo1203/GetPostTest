@@ -30,9 +30,8 @@ def show_user(user_id):
         return make_response(jsonify([]))
 
     if request.method == 'PUT':
-        user.name = request.data.get('name', '')
-        user.description = request.data.get('description', '')
-        db.session.flush()
+        user.name = 'aaaaa'
+        db.session.commit()
         return make_response(jsonify(result_json(user)))
 
     if request.method == 'DELETE':
