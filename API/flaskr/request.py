@@ -6,11 +6,10 @@ from flaskr.models import User
 @app.route('/', methods=['GET', 'POST'])
 def show_users():
     if request.method == 'POST':
-        name = request.data.get('name', '')
-        description = request.data.get('description', '')
+        data = eval(request.data)
         user = User(
-            name=name,
-            description=description
+            name=data['name'],
+            description=data['description']
         )
         db.session.add(user)
         db.session.commit()
