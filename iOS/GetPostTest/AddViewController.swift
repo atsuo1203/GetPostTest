@@ -20,6 +20,7 @@ class AddViewController: UIViewController {
         }
         let description = descriptionTextView.text.description
         self.postRequest(name: name, description: description)
+        self.dismiss(animated: true, completion: nil)
     }
     @IBOutlet weak var nameTextField: UITextField!
 
