@@ -13,5 +13,8 @@ iOS
 flask
 * python3.6
 
+### インストール
+pip install -r requirements.txt
+
 ## 機能
-簡単なGET,POSTを実装する
+簡単なGET,POST,PUT,DELETE
