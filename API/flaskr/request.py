@@ -1,12 +1,13 @@
 from flask import request, redirect, url_for, make_response, jsonify
 from flaskr import app, db
 from flaskr.models import User
+import json
 
 
 @app.route('/', methods=['GET', 'POST'])
 def show_users():
     if request.method == 'POST':
-        data = eval(request.data)
+        data = json.loads(request.data.decode('utf-8'))
         user = User(
             name=data['name'],
             description=data['description']
@@ -29,7 +30,7 @@ def show_user(user_id):
         return make_response(jsonify([]))
 
     if request.method == 'PUT':
-        data = eval(request.data)
+        data = json.loads(request.data.decode('utf-8'))
         user.name = data['name']
         user.description = data['description']
         db.session.commit()
