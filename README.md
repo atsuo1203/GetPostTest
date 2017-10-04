@@ -14,7 +14,7 @@
 ### iOS
 ` pod install`
 
-### 　API
+### API
 ` pip install -r requirements.txt `
 
 ` python creat_db.py `
