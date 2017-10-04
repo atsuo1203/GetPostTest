@@ -2,19 +2,29 @@
 
 ## 環境
 
-### クライアント
-
-iOS
+### iOS
 * xcode8.3
 * swift 3
 
-### サーバ
-
-flask
+### API
 * python3.6
 
-### インストール
+## 準備
+
+### iOS
+` pod install`
+
+### 　API
 ` pip install -r requirements.txt `
+
+` python creat_db.py `
+
+## 起動
+### iOS
+` open GetPostTest.xcworkspace/ `
+
+### API
+` python manage.py `
 
 ## 機能
 簡単なGET,POST,PUT,DELETE
